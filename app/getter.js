@@ -1,5 +1,4 @@
 var  exports = module.exports = {};
-
 exports.get = function(id, next){
 var request = require("request");
 var gsheet = require("google-spreadsheet");
@@ -27,45 +26,3 @@ sheet.getInfo(function(err, sheet_info) {
   }
 });
 };
-// sheet.getRows( function(err, rows){
-//   if(!err){
-//     console.error("Error reading rows: %s ", rows);
-//   }
-// });
-// sheet.getRows( 1, function(err, row_data){
-//   if(err !== null){
-//     console.error("Error while reading sheet: %s", err);
-//   }else{
-//     console.log( 'pulled in '+row_data.length + ' rows ');
-//     // console.log(row_data[0]);
-//   }
-//   });
-// sheet.getInfo(function(err, info){
-//   if(err !== null){
-
-//   }else{
-//     console.log(info);
-//   }
-// });
-
-// console.log("getter");
-// module.exports = exports  = {};
-// // exports.read = function(){
-//   request.get(url, function(error, response, body){
-//     if(error !== null){
-//       console.error(error);
-//     }
-//     if(response.statusCode != 200){
-//       console.log(response.statusCode);
-//     }
-//     if(!error && response,statusCode == 200){
-//       var content = body;
-//       console.log(content);
-//       return true;
-//     }
-//     // else{
-//     //   return error;
-//     // }
-//   });
-
-// };

@@ -1,0 +1,17 @@
+.DS_Store
+node_modules
+bower_components
+sftp-config.json
+build-tmp
+
+# History files
+.Rhistory
+.RData
+.Rapp.history
+
+# Example code in package build process
+*-Ex.R
+
+# RStudio files
+.Rproj.user/
+.sublime-grunt.cache

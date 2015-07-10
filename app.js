@@ -7,6 +7,7 @@ var methodOverride = require('method-override');
 var errorHandler = require('errorhandler');
 var hbs = require('express-hbs');
 var routes = require('./routes');
+var compression = require('compression');
 // var allergene = require('./routes/allergene');
 // var favicon = require('serve-favicon');
 // var cookieParser = require('cookie-parser');
@@ -14,7 +15,8 @@ var routes = require('./routes');
 var port = 4300;
 
 var app = express();
-
+// compress with gzip
+app.use(compression());
 // view engine setup
 app.set('port', process.env.PORT || port);
 app.set('view engine', 'hbs');

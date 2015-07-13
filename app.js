@@ -12,7 +12,7 @@ var compression = require('compression');
 // var favicon = require('serve-favicon');
 // var cookieParser = require('cookie-parser');
 
-var port = 4442;
+var port = 61424;
 
 var app = express();
 // compress with gzip

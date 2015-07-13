@@ -1,3 +1,6 @@
 RewriteEngine On
-# Redirect a whole subdirectory:
-RewriteRule ^is-the-lab-open/(.*) http://localhost:61424/$1 [P]
+
+RewriteRule ^/is-the-lab-open$ http://127.0.0.1:61424/ [P,L]
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^/is-the-lab-open/(.*)$ http://127.0.0.1:61424/$1 [P,L]

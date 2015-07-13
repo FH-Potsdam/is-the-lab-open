@@ -1,7 +1,3 @@
-using ht
-
-<IfModule mod_rewrite.c>
-    RewriteEngine On
-    # Redirect a whole subdirectory:
-    RewriteRule ^myapp/(.+) http://localhost:61424/$1 [P]
-</IfModule>
+RewriteEngine On
+# Redirect a whole subdirectory:
+RewriteRule ^is-the-lab-open/(.*) http://localhost:61424/$1 [P]

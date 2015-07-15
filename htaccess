@@ -1,9 +1,0 @@
-# this rule should go into the documentRoot
-# not into a folder.
-# Creating a folder with the rewirte source name
-# (in our case is-the-lab-open/)
-# results a non reachable application
-# the folder should not exist!
-#
-RewriteEngine On
-RewriteRule ^is-the-lab-open/(.*) http://localhost:61424/$1 [P]

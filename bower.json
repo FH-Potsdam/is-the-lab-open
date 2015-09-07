@@ -1,0 +1,22 @@
+{
+  "name": "is-the-lab-open",
+  "version": "0.1.0",
+  "homepage": "https://github.com/FH-Potsdam/is-the-lab-open",
+  "authors": [
+    "fabiantheblind <icke@fabianmoronzirfas.me>"
+  ],
+  "description": "a little IOT project",
+  "main": "app.js",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "~3.3.5",
+    "bootstrap-material-design": "~0.3.0"
+  }
+}

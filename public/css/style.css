@@ -1,0 +1,52 @@
+body{
+  font-size: 16px;
+  font-family: 'Vollkorn', serif !important;
+}
+
+h1{
+  /*text-align: center;*/
+  font-size: 5em;
+  font-weight: 700;
+  font-family: 'Vollkorn', serif !important;
+
+}
+/*http://stackoverflow.com/questions/22196587/how-to-center-align-vertically-the-container-in-bootstrap*/
+.vertical-center {
+  min-height: 100%;  /* Fallback for browsers do NOT support vh unit */
+  min-height: 100vh; /* These two lines are counted as one :-)       */
+
+  display: flex;
+  align-items: center;
+}
+
+
+/*http://www.minimit.com/articles/solutions-tutorials/bootstrap-3-responsive-centered-columns*/
+/* centered columns styles */
+.row-centered {
+    text-align:center;
+}
+.col-centered {
+    display:inline-block;
+    float:none;
+    /* reset the text-align */
+    text-align:left;
+    /* inline-block space fix */
+    margin-right:-4px;
+}
+
+/*#wrapper{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-top: -50px;
+    margin-left: -50px;
+    width: 200px;
+    height: 100px;
+  text-align: center;
+  font-family: 'Vollkorn', serif !important;
+
+}​*/
+/*#links{
+  font-family: 'Vollkorn', serif !important;
+
+}*/

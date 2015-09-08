@@ -17,6 +17,7 @@
   ],
   "dependencies": {
     "bootstrap": "~3.3.5",
-    "bootstrap-material-design": "~0.3.0"
+    "bootstrap-material-design": "~0.3.0",
+    "fontawesome": "~4.4.0"
   }
 }

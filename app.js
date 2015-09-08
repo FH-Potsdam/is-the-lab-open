@@ -7,6 +7,7 @@ var methodOverride = require('method-override');
 var errorHandler = require('errorhandler');
 var hbs = require('express-hbs');
 var routes = require('./routes');
+var about = require('./routes/about');
 var compression = require('compression');
 // var allergene = require('./routes/allergene');
 // var favicon = require('serve-favicon');
@@ -59,6 +60,10 @@ if (app.get('env') === 'development') {
 }
 
 app.get('/', routes.index);
+app.get('/who',about.who);
+app.get('/what',about.what);
+app.get('/why',about.why);
+app.get('/how',about.how);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

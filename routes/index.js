@@ -15,15 +15,15 @@ exports.index = function(req, res) {
       if (val === 1) {
         res.render('index', {
           title: 'Is the lab open?',
-          val: 'Yes'
+          val: 'yes!'
         });
-        console.log("Yes");
+        console.log("yes!");
       } else {
         res.render('index', {
           title: 'Is the lab open?',
-          val: 'No'
+          val: 'no!'
         });
-        console.log("No");
+        console.log("no!");
       }
     } else {
       res.render('index', {

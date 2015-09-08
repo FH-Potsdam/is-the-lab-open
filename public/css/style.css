@@ -1,10 +1,11 @@
 body{
   font-size: 16px;
   font-family: 'Vollkorn', serif !important;
+  background-color: white;
 }
 
 h1{
-  /*text-align: center;*/
+  text-align: center;
   font-size: 5em;
   font-weight: 700;
   font-family: 'Vollkorn', serif !important;
@@ -46,7 +47,6 @@ h1{
   font-family: 'Vollkorn', serif !important;
 
 }​*/
-/*#links{
-  font-family: 'Vollkorn', serif !important;
-
-}*/
+#links{
+text-align: center;
+}

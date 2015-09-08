@@ -37,9 +37,9 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(methodOverride());
 
 if(app.get('env') === 'development'){
-app.use(express.static(path.join(__dirname, '/public')));
-}else if(app.get('env') === 'production'){
 app.use('/is-the-lab-open',express.static(path.join(__dirname, '/public')));
+}else if(app.get('env') === 'production'){
+app.use(express.static(path.join(__dirname, '/public')));
 }
 if('development' == app.get('env')){
   app.use(errorHandler());

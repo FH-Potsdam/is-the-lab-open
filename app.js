@@ -39,10 +39,11 @@ app.use(methodOverride());
 
 if(app.get('env') === 'development'){
 app.use('/is-the-lab-open',express.static(path.join(__dirname, '/public')));
-}else if(app.get('env') === 'production'){
+} else if (app.get('env') === 'production') {
 app.use(express.static(path.join(__dirname, '/public')));
 }
-if('development' == app.get('env')){
+
+if( app.get('env') === 'development'){
   app.use(errorHandler());
 }
 
@@ -60,11 +61,13 @@ if (app.get('env') === 'development') {
 }
 
 app.get('/', routes.index);
-app.get('/who',about.who);
-app.get('/what',about.what);
-app.get('/why',about.why);
-app.get('/how',about.how);
+if (app.get('env') === 'development') {
 
+app.get('/is-the-lab-open/who',about.who);
+app.get('/is-the-lab-open/what',about.what);
+app.get('/is-the-lab-open/why',about.why);
+app.get('/is-the-lab-open/how',about.how);
+}
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
   var err = new Error('Not Found');

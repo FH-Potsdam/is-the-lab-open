@@ -1,6 +1,6 @@
 {
   "name": "is-the-lab-open",
-  "version": "0.2.0",
+  "version": "0.2.1-0",
   "description": "A small web page that can be called to see if the interface lab is open",
   "main": "app.js",
   "repository": {

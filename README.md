@@ -3,7 +3,7 @@
 ## what?
 This site is an experiment on location based triggers. Whenever a student needs to know if the Interface Lab is open for consultation he just can load the site. It tells you if the lab is open.
 
-## why
+## why?
 
 Short version: "Because we can. Long version: It often occurs that students ask per email if the lab is open. This is a simple whay to find out. Also it is a test if location based triggers work accurate.  
 

@@ -3,6 +3,10 @@
   "version": "0.1.0",
   "description": "A small web page that can be called to see if the interface lab is open",
   "main": "app.js",
+  "repository" :
+  { "type" : "git"
+  , "url" : "github.com/FH-Potsdam/is-the-lab-open.git"
+  },
   "scripts": {
     "test": "./node_modules/.bin/mocha --reporter spec"
   },

@@ -61,13 +61,12 @@ if (app.get('env') === 'development') {
 }
 
 app.get('/', routes.index);
-if (app.get('env') === 'development') {
 
 app.get('/is-the-lab-open/who',about.who);
 app.get('/is-the-lab-open/what',about.what);
 app.get('/is-the-lab-open/why',about.why);
 app.get('/is-the-lab-open/how',about.how);
-}
+
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
   var err = new Error('Not Found');

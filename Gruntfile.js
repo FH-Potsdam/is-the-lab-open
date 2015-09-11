@@ -2,10 +2,7 @@
 module.exports = function(grunt) {
   // load all grunt tasks matching the ['grunt-*', '@*/grunt-*'] patterns
   require('load-grunt-tasks')(grunt);
-
   grunt.initConfig({
-
-
     cssmin: {
       options: {
         keepSpecialComments: 0,
@@ -14,7 +11,13 @@ module.exports = function(grunt) {
       },
       target: {
         files: {
-          'public/css/style.min.css': ['public/css/style.css']
+          'public/css/all.styles.min.css': [
+            'public/css/bootstrap.min.css',
+            'public/css/material.min.css',
+            'public/css/ripples.min.css',
+            'public/css/font-awesome.min.css',
+            'public/css/style.css'
+          ]
         }
       }
     },
@@ -24,11 +27,16 @@ module.exports = function(grunt) {
       },
       tgt: {
         files: {
-          'public/js/main.min.js': ['public/js/main.js']
+          'public/js/all.js.min.js': [
+          'public/js/jquery.min.js',
+            'public/js/bootstrap.min.js',
+            'public/js/material.min.js',
+            'public/js/ripples.min.js',
+            'public/js/main.min.js'
+          ],
         }
       }
     },
-
     concat: {
       options: {
         separator: ';',
@@ -53,5 +61,5 @@ module.exports = function(grunt) {
       },
     },
   });
-  grunt.registerTask('default', ['cssmin', 'uglify', 'concat:css','concat:js']);
+  grunt.registerTask('default', ['cssmin', 'uglify']);
 };

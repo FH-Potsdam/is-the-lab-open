@@ -11,7 +11,7 @@ Short version: "Because we can. Long version: It often occurs that students ask 
 On the mobile device of the lab supervisor is a location based trigger installed with <a href="https://ifttt.com">ifttt.com</a>. If he enters the area ifttt writes a variable into a google spreadsheets. 1 for yes 0 for no. This gets read from the nodejs application. According to the result of the query the application presents the information. For further and deeper insight check out the open source code at github.com (coming soon).  
 
 ##who?  
-This site is build by <a href="https://github.com/fabiantheblind">Fabian "fabiantheblind" Morón Zirfas</a> for the <a href="http://www.fh-potsdam.de/">University of Applied Sciences Potsdam (Germany)</a> with <3.  
+This site is build by <a href="https://github.com/fabiantheblind">Fabian "fabiantheblind" Morón Zirfas</a> for the <a href="https://github.com/FH-Potsdam">University of Applied Sciences Potsdam (Germany)</a> with <3.  
 
 ## License
 

@@ -13,12 +13,14 @@ exports.index = function(req, res) {
       console.log(val);
       if (val === 1) {
         res.render('index', {
+          env:req.app.get('dev'),
           title: 'Is the lab open?',
           val: 'yes!'
         });
         console.log("yes!");
       } else {
         res.render('index', {
+          env:req.app.get('dev'),
           title: 'Is the lab open?',
           val: 'no!'
         });
@@ -26,6 +28,7 @@ exports.index = function(req, res) {
       }
     } else {
       res.render('index', {
+        env:req.app.get('dev'),
         title: 'Error retrieving data. Please come back later'
       });
 

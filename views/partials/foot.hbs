@@ -1,11 +1,15 @@
 <!-- foot.hbs -->
 <footer>
 </footer>
+{{#if env}}
 <script type="text/javascript" src="/is-the-lab-open/js/jquery.min.js"></script>
 <script type="text/javascript" src="/is-the-lab-open/js/bootstrap.min.js"></script>
 <script type="text/javascript" src="/is-the-lab-open/js/material.min.js"></script>
 <script type="text/javascript" src="/is-the-lab-open/js/ripples.min.js"></script>
 <script type="text/javascript" src="/is-the-lab-open/js/main.js"></script>
-
+{{else}}
+<script type="text/javascript" src="/public/js/all.js.min.js"></script>
+{{/if}}
   </body>
+
 </html>

@@ -7,7 +7,7 @@ var sheet = require("../app/getter");
 
 exports.index = function(req, res) {
 
-  var id = "1yS5TaXAd5BAzViim6xkkM0pxpbpLf1gGFXx8VAuW4UA";
+  var id = "1WjjpEEysIBlOKez-SqQqVI5f0mUZbMzwBhnRgXk_7Dg";
   sheet.get(id, function(err, val) {
     if (!err) {
       console.log(val);

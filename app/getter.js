@@ -2,8 +2,10 @@ var  exports = module.exports = {};
 exports.get = function(id, next){
 var request = require("request");
 var gsheet = require("google-spreadsheet");
-// https://docs.google.com/spreadsheets/d/1yS5TaXAd5BAzViim6xkkM0pxpbpLf1gGFXx8VAuW4UA/pubhtml
-// var id =  "1yS5TaXAd5BAzViim6xkkM0pxpbpLf1gGFXx8VAuW4UA";
+
+// https://docs.google.com/spreadsheets/d/1WjjpEEysIBlOKez-SqQqVI5f0mUZbMzwBhnRgXk_7Dg/edit?usp=sharing
+
+// var id =  "1WjjpEEysIBlOKez-SqQqVI5f0mUZbMzwBhnRgXk_7Dg";
 var sheet = new gsheet(id);
 sheet.getInfo(function(err, sheet_info) {
   if (!err) {

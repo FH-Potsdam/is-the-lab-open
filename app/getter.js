@@ -2,8 +2,8 @@ var  exports = module.exports = {};
 exports.get = function(id, next){
 var request = require("request");
 var gsheet = require("google-spreadsheet");
-//https://docs.google.com/spreadsheets/d/1DhfnhUP5qoL7LU5P5P7ZKOMavFHdVKeNW9w3AmKfhCA/pubhtml?gid=0&single=true
-// var id =  "1DhfnhUP5qoL7LU5P5P7ZKOMavFHdVKeNW9w3AmKfhCA";
+// https://docs.google.com/spreadsheets/d/1yS5TaXAd5BAzViim6xkkM0pxpbpLf1gGFXx8VAuW4UA/pubhtml
+// var id =  "1yS5TaXAd5BAzViim6xkkM0pxpbpLf1gGFXx8VAuW4UA";
 var sheet = new gsheet(id);
 sheet.getInfo(function(err, sheet_info) {
   if (!err) {

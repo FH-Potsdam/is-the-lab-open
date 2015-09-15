@@ -6,9 +6,8 @@ var sheet = require("../app/getter");
 // }
 
 exports.index = function(req, res) {
-// https://docs.google.com/spreadsheets/d/1WjjpEEysIBlOKez-SqQqVI5f0mUZbMzwBhnRgXk_7Dg/edit?usp=sharing
-// https://docs.google.com/spreadsheets/d/1WjjpEEysIBlOKez-SqQqVI5f0mUZbMzwBhnRgXk_7Dg/edit?usp=sharing
-  var id = "1WjjpEEysIBlOKez-SqQqVI5f0mUZbMzwBhnRgXk_7Dg";
+// https://docs.google.com/spreadsheets/d/1j4lhA_I2iv6wWvsgvU9SjZxQCaSIWNNdBZZPMhDf7_4/edit?usp=sharing
+  var id = "1j4lhA_I2iv6wWvsgvU9SjZxQCaSIWNNdBZZPMhDf7_4";
   sheet.get(id, function(err, val) {
     if (!err) {
       console.log(val);

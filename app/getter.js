@@ -3,8 +3,7 @@ exports.get = function(id, next){
 var request = require("request");
 var gsheet = require("google-spreadsheet");
 
-// https://docs.google.com/spreadsheets/d/1WjjpEEysIBlOKez-SqQqVI5f0mUZbMzwBhnRgXk_7Dg/edit?usp=sharing
-// var id =  "1WjjpEEysIBlOKez-SqQqVI5f0mUZbMzwBhnRgXk_7Dg";
+// var id =  "1j4lhA_I2iv6wWvsgvU9SjZxQCaSIWNNdBZZPMhDf7_4";
 var sheet = new gsheet(id);
 sheet.getInfo(function(err, sheet_info) {
   if (!err) {

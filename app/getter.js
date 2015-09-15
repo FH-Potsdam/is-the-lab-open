@@ -7,13 +7,13 @@ var gsheet = require("google-spreadsheet");
 var sheet = new gsheet(id);
 sheet.getInfo(function(err, sheet_info) {
   if (!err) {
-    console.log(sheet_info);
+    // console.log(sheet_info);
     sheet1 = sheet_info.worksheets[0];
     sheet1.getRows(function(err, rows) {
       if (!err) {
-        console.log(rows[rows.length-1]);
+        // console.log(rows[rows.length-1]);
         var res = rows[rows.length-1]['is-the-lab-open'];
-        console.log(val);
+        // console.log(val);
         // return val;
           var val = parseInt(res, 10);
         next(null, val);

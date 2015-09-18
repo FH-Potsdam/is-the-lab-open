@@ -8,7 +8,8 @@
     "url": "github.com/FH-Potsdam/is-the-lab-open.git"
   },
   "scripts": {
-    "test": "./node_modules/.bin/mocha --reporter spec"
+    "test": "./node_modules/.bin/mocha --reporter spec",
+    "start":"node app.js"
   },
   "author": "fabiantheblind",
   "license": "MIT",
@@ -18,6 +19,7 @@
     "errorhandler": "^1.4.1",
     "express": "^4.13.0",
     "express-hbs": "^0.8.4",
+    "express-slash": "^2.0.1",
     "google-spreadsheet": "^0.3.1",
     "method-override": "^2.3.3",
     "morgan": "^1.6.1",

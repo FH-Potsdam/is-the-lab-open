@@ -1,11 +1,13 @@
-var express = require('express');
 var path = require('path');
 var http = require('http');
+var express = require('express');
+var hbs = require('express-hbs');
+var slash = require('express-slash');
+
 var logger = require('morgan');
 var bodyParser = require('body-parser');
 var methodOverride = require('method-override');
 var errorHandler = require('errorhandler');
-var hbs = require('express-hbs');
 var routes = require('./routes');
 var about = require('./routes/about');
 var compression = require('compression');
@@ -14,6 +16,9 @@ var compression = require('compression');
 // var cookieParser = require('cookie-parser');
 var port = 61424;
 var app = express();
+app.enable('strict routing');
+app.use(slash());
+
 // compress with gzip
 app.use(compression());
 // view engine setup

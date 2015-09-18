@@ -17,6 +17,11 @@ var compression = require('compression');
 var port = 61424;
 var app = express();
 app.enable('strict routing');
+var router = express.Router({
+    caseSensitive: app.get('case sensitive routing'),
+    strict       : app.get('strict routing')
+});
+app.use(router);
 app.use(slash());
 
 // compress with gzip
@@ -58,11 +63,11 @@ error: err
 });
 });
 }
-app.get('/', routes.index);
-app.get('/who',about.who);
-app.get('/what',about.what);
-app.get('/why',about.why);
-app.get('/how',about.how);
+router.get('/', routes.index);
+router.get('/who',about.who);
+router.get('/what',about.what);
+router.get('/why',about.why);
+router.get('/how',about.how);
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
 if(app.get('env') === 'development'){

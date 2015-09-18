@@ -1,13 +1,11 @@
+var express = require('express');
 var path = require('path');
 var http = require('http');
-var express = require('express');
-var hbs = require('express-hbs');
-var slash = require('express-slash');
-
 var logger = require('morgan');
 var bodyParser = require('body-parser');
 var methodOverride = require('method-override');
 var errorHandler = require('errorhandler');
+var hbs = require('express-hbs');
 var routes = require('./routes');
 var about = require('./routes/about');
 var compression = require('compression');
@@ -16,14 +14,7 @@ var compression = require('compression');
 // var cookieParser = require('cookie-parser');
 var port = 61424;
 var app = express();
-app.enable('strict routing');
-var router = express.Router({
-    caseSensitive: app.get('case sensitive routing'),
-    strict       : app.get('strict routing')
-});
-app.use(router);
-app.use(slash());
-
+app.disable('strict routing');
 // compress with gzip
 app.use(compression());
 // view engine setup
@@ -63,11 +54,11 @@ error: err
 });
 });
 }
-router.get('/', routes.index);
-router.get('/who',about.who);
-router.get('/what',about.what);
-router.get('/why',about.why);
-router.get('/how',about.how);
+app.get('/', routes.index);
+app.get('/who',about.who);
+app.get('/what',about.what);
+app.get('/why',about.why);
+app.get('/how',about.how);
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
 if(app.get('env') === 'development'){

@@ -7,3 +7,4 @@
 #
 RewriteEngine On
 RewriteRule ^is-the-lab-open/(.*) http://localhost:61424/$1 [P]
+RewriteRule ^is-the-lab-open http://localhost:61424/$1 [P]

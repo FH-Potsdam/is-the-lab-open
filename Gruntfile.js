@@ -2,6 +2,7 @@
 module.exports = function(grunt) {
   // load all grunt tasks matching the ['grunt-*', '@*/grunt-*'] patterns
   require('load-grunt-tasks')(grunt);
+  grunt.loadTasks('tasks');
   grunt.initConfig({
     cssmin: {
       options: {
@@ -38,10 +39,27 @@ module.exports = function(grunt) {
       }
     },
     concat: {
+      docs:{
+      options: {
+        separator: '  \n',
+        process:function(src, filepath){
+          return src.replace('<i class="fa fa-heart"></i>', '<3');
+        }
+      },
+      src:[
+      'docs/head.md',
+      'docs/what.md',
+      'docs/why.md',
+      'docs/how.md',
+      'docs/who.md',
+      'docs/license.md'
+      ],
+      dest:'README.md'
+      },
+      css: {
       options: {
         separator: ';',
       },
-      css: {
         src: ['public/css/bootstrap.min.css',
           'public/css/material.min.css',
           'public/css/ripples.min.css',
@@ -61,5 +79,6 @@ module.exports = function(grunt) {
       },
     },
   });
+  grunt.registerTask('docs',['create-md','concat:docs']);
   grunt.registerTask('default', ['cssmin', 'uglify']);
 };

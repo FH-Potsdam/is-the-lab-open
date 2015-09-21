@@ -1,5 +1,6 @@
 var CronJob = require('cron').CronJob;
 var cache = require('./app/cache');
+var badge = require('./app/badge');
 var express = require('express');
 var path = require('path');
 var http = require('http');
@@ -63,6 +64,12 @@ app.get('/who', about.who);
 app.get('/what', about.what);
 app.get('/why', about.why);
 app.get('/how', about.how);
+app.get('/badge.svg',function(req, res, next){
+  badge.create();
+  res.setHeader('Content-Type', 'image/svg+xml');
+  res.sendFile(__dirname + '/public/images/badge.svg');
+
+});
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
   if (app.get('env') === 'development') {

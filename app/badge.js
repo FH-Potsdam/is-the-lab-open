@@ -1,3 +1,8 @@
+/**
+ * This generates the svg file for the badge
+ * on request. Currently it gets created every minute
+ *
+ */
 var fs = require('fs');
 exports.create = function() {
   var res = fs.readFileSync('public/cache/data.json', 'utf8');

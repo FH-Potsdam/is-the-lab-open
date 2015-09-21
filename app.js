@@ -95,8 +95,8 @@ app.use(function(err, req, res, next) {
 new CronJob('00 * * * * *', function() {
   if(app.get('env') === 'development'){
     console.log('CronJob is pulling data');
-    cache.write();
   }
+    cache.write();
 
 
 }, null, true, 'Europe/Berlin');

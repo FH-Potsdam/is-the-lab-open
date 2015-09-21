@@ -34,7 +34,5 @@ exports.index = function(req, res) {
       val: (data.val === 1 ? 'yes!' : 'no!')
     });
     console.log(data);
-
-
   }
 };

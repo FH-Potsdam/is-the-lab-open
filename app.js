@@ -1,8 +1,6 @@
-var CronJob = require('cron').CronJob;
 var cache = require('./app/cache');
 var auth = require('./app/auth');
 var api = require('./app/api');
-// var basicAuth = require('basic-auth');
 var express = require('express');
 var path = require('path');
 var http = require('http');

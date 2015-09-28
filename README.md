@@ -10,10 +10,36 @@ This site is an experiment on location based triggers. Whenever a student needs 
 Short version: "Because we can. Long version: It often occurs that students ask per email if the lab is open. This is a simple way to find out. Also it is a test if location based triggers work accurate.  
   
 ## how  
-On the mobile device of the lab supervisor is a location based trigger installed with <a href="https://ifttt.com">ifttt.com</a>. If he enters the area ifttt calls the API of the application.The sent value is cached for faster response times. According to the result of the cacked data the application presents the information when the user loads the site. For further and deeper insight check out the open source <a href="https://github.com/FH-Potsdam/is-the-lab-open">code at github.com</a>.  
+On the mobile device of the lab supervisor is a location based trigger installed with <a href="https://ifttt.com">ifttt.com</a>. If he enters the area ifttt calls the API of the application.The sent value is cached for faster response times. According to the result of the cached data the application presents the information when the user loads the site. For further and deeper insight check out the open source <a href="https://github.com/FH-Potsdam/is-the-lab-open">code at github.com</a>.  
   
 ## who  
 This site is build by <a href="https://github.com/fabiantheblind">Fabian "fabiantheblind" Morón Zirfas</a> for the <a href="https://github.com/FH-Potsdam">University of Applied Sciences Potsdam (Germany)</a> with <3.  
+  
+## Server  
+
+How to set up the server?  
+
+tbd  
+## authentication  
+
+Currently we have some simple authentication in place so nobody can call the api. Create a file under `private/data.json` and add the following content.  
+
+    [
+      {
+        "id":1,
+        "username":"secretname",
+        "password":"superlongultrasecretpassword",
+        "email":"me@me.io"
+      }
+    ]
+
+To make a call to the api you can now open the url like this:   
+
+This opens the lab: [https://maker:superlongultrasecretpassword@example.com/is-the-lab-open/api/1](https://maker:superlongultrasecretpassword@example.com/is-the-lab-open/api/1)  
+
+
+This closes the lab: [https://maker:superlongultrasecretpassword@example.com/is-the-lab-open/api/0](https://maker:superlongultrasecretpassword@example.com/is-the-lab-open/api/0)  
+
   
 ## License
 

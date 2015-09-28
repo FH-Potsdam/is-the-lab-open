@@ -1,4 +1,5 @@
 var sheet = require('../app/getter');
+var badge = require('./badge');
 var fs = require('fs');
 // console.log(sheet.get(id));
 // if(res !== null){
@@ -10,6 +11,23 @@ exports.read = function() {
   var data = JSON.parse(res);
   return data;
 };
+
+
+exports.apiWrite =function(value, dt){
+        var data = {
+        'val': value,
+        'time': dt,
+      };
+    console.log("logging: ", data);
+
+   fs.writeFile('public/cache/data.json', JSON.stringify(data), function(err) {
+        if (err) {
+          return console.error(err);
+        }
+        badge.create();
+      });
+};
+
 exports.write = function() {
   // https://docs.google.com/spreadsheets/d/1j4lhA_I2iv6wWvsgvU9SjZxQCaSIWNNdBZZPMhDf7_4/edit?usp=sharing
   var settings = JSON.parse(fs.readFileSync('settings.json', 'utf8'));

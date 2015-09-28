@@ -5,5 +5,5 @@ sftp-config.json
 build-tmp
 .sublime-grunt.cache
 npm-debug.log
-private/data.json
 !private/example-data.json
+private/data.json

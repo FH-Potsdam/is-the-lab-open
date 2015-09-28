@@ -19,10 +19,11 @@ This site is build by <a href="https://github.com/fabiantheblind">Fabian "fabian
 
 How to set up the server?  
 
-tbd  
-## authentication  
+tbd
+  
+## Authentification  
 
-Currently we have some simple authentication in place so nobody can call the api. Create a file under `private/data.json` and add the following content.  
+Currently we have some simple authentification in place so nobody can call the api except for those who now the password and username\*. Create a file under `private/data.json` and add the following content.  
 
     [
       {
@@ -40,7 +41,7 @@ This opens the lab: [https://maker:superlongultrasecretpassword@example.com/is-t
 
 This closes the lab: [https://maker:superlongultrasecretpassword@example.com/is-the-lab-open/api/0](https://maker:superlongultrasecretpassword@example.com/is-the-lab-open/api/0)  
 
-  
+\* Calls like these should only be made over https or you risk man in the middle attacks.    
 ## License
 
 Copyright (c)  2015 Fabian "fabiantheblind" Morón Zirfas & FH-Potsdam University of Applied Sciences Potsdam (Germany)   

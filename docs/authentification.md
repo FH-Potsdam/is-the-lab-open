@@ -1,6 +1,6 @@
-## authentication  
+## Authentification  
 
-Currently we have some simple authentication in place so nobody can call the api. Create a file under `private/data.json` and add the following content.  
+Currently we have some simple authentification in place so nobody can call the api. Create a file under `private/data.json` and add the following content.  
 
     [
       {

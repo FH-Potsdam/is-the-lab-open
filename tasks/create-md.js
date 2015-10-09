@@ -6,7 +6,7 @@ module.exports = function(grunt) {
     var texts = txt.get();
     for(var key in texts){
       if(texts.hasOwnProperty(key)){
-        var content = '## ' + key + '  \n' + texts[key] + '  \n';
+        var content = '## ' + key + '?  \n' + texts[key] + '  \n';
         fs.writeFileSync('docs/' + key + '.md', content, 'utf8');
       }
     }

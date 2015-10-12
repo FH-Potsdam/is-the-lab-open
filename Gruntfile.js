@@ -52,6 +52,9 @@ module.exports = function(grunt) {
       'docs/why.md',
       'docs/how.md',
       'docs/who.md',
+      'docs/authentication.md',
+      'docs/ifttt.md',
+      'docs/server.md',
       'docs/license.md'
       ],
       dest:'README.md'

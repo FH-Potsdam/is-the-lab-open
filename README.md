@@ -1,6 +1,7 @@
 # is the lab open?
 
 ![](https://interface.fh-potsdam.de/is-the-lab-open/badge.svg)  
+[![Gitter Chat](https://badges.gitter.im/FH-Potsdam/is-the-lab-open.svg)](https://gitter.im/FH-Potsdam/is-the-lab-open)  
 
   
 ## what  
@@ -10,10 +11,99 @@ This site is an experiment on location based triggers. Whenever a student needs 
 Short version: "Because we can. Long version: It often occurs that students ask per email if the lab is open. This is a simple way to find out. Also it is a test if location based triggers work accurate.  
   
 ## how  
-On the mobile device of the lab supervisor is a location based trigger installed with <a href="https://ifttt.com">ifttt.com</a>. If he enters the area ifttt calls the API of the application.The sent value is cached for faster response times. According to the result of the cacked data the application presents the information when the user loads the site. For further and deeper insight check out the open source <a href="https://github.com/FH-Potsdam/is-the-lab-open">code at github.com</a>.  
+On the mobile device of the lab supervisor is a location based trigger installed with <a href="https://ifttt.com">ifttt.com</a>. If he enters the area ifttt calls the API of the application.The sent value is cached for faster response times. According to the result of the cached data the application presents the information when the user loads the site. For further and deeper insight check out the open source <a href="https://github.com/FH-Potsdam/is-the-lab-open">code at github.com</a>.  
   
 ## who  
 This site is build by <a href="https://github.com/fabiantheblind">Fabian "fabiantheblind" Morón Zirfas</a> for the <a href="https://github.com/FH-Potsdam">University of Applied Sciences Potsdam (Germany)</a> with <3.  
+  
+## authentication to the API  
+
+Currently we have some simple authentication in place so nobody can call the api except for those who now the password and username\*. Create a file under `private/data.json` and add the following content.  
+
+    [
+      {
+        "id":1,
+        "username":"secretname",
+        "password":"superlongultrasecretpassword",
+        "email":"me@me.io"
+      }
+    ]
+
+To make a call to the api you can now open the url like this:   
+
+This opens the lab: [https://maker:superlongultrasecretpassword@example.com/is-the-lab-open/api/1](https://maker:superlongultrasecretpassword@example.com/is-the-lab-open/api/1)  
+
+
+This closes the lab: [https://maker:superlongultrasecretpassword@example.com/is-the-lab-open/api/0](https://maker:superlongultrasecretpassword@example.com/is-the-lab-open/api/0)  
+
+\* Calls like these should only be made over https or you risk man in the middle attacks.  
+
+  
+## ifttt.com
+
+To setup the location based triggers you need to enable the Maker channel and of course the location triggers.  
+Take a look at these screengraps. You need to enter your API url and the credentials which you can see in the section [authentification](#authentification).  
+
+### request if you enter an area
+
+![](docs/images/ifttt-recipie-location-trigger-enter.png)  
+  
+
+### request if you exit an area
+
+![](docs/images/ifttt-recipie-location-trigger-enter.png)    
+## Server & deployment   
+
+On your server you need to have Node.js installed. Due to the recent changes in Node.js I recommend installing [nvm](https://github.com/creationix/nvm) and installing Node.js that way. This version is developed under Node.js Version 0.12.7 and we had some issues building against v4.\*.  
+After that install [forever](https://github.com/foreverjs/forever) globally by running:  
+
+    npm i forever bower grunt-cli -g  
+
+Clone the repo somewhere into your users folder e.g.  
+
+    mkdir ~/apps && cd ~/apps
+    git clone git@github.com:FH-Potsdam/is-the-lab-open.git && cd is-the-lab-open/
+    npm install && bower install
+
+_In future version we will try to have forever, bower and grunt-cli as local dependiencies._  
+
+To build the release version run:  
+
+    grunt  
+
+To build the README run:  
+
+    grunt docs  
+
+Now add to your servers document root the following .htaccess (can be found also in htaccess-example). 
+
+    RewriteEngine On
+    RewriteRule ^is-the-lab-open/(.*) http://localhost:61424/$1 [P]
+    RewriteRule ^is-the-lab-open http://localhost:61424/$1 [P]
+
+__!Hint:__This rule should go into the documentRoot not into a folder with that name.
+Creating a folder with the rewirte source name, in our case "is-the-lab-open", results a non reachable application. The folder should not exist!  
+
+Create a new crontab with the following command:  
+
+    crontab -e
+
+and add the following lines:  
+
+    @reboot /usr/local/bin/forever start -l /path/to/your/logs/is-the-lab-open.log -e /path/to/your/errs/is-the-lab-open-err.log -a  /home/you/apps/is-the-lab-open/app.js  
+
+Start the app by running (when you are still in the project folder):  
+
+    forever start -l /path/to/your/logs/is-the-lab-open.log -e /path/to/your/errs/is-the-lab-open-err.log -a  app.js
+
+Go to [https://fancy-domain.io/is-the-lab-open/](https://fancy-domain.io/is-the-lab-open/).  
+Your app should be live.  
+
+To see the badge got to [https://fancy-domain.io/is-the-lab-open/badge.svg](https://fancy-domain.io/is-the-lab-open/badge.svg)  
+
+
+
+
   
 ## License
 

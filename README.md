@@ -1,6 +1,7 @@
 # is the lab open?
 
 ![](https://interface.fh-potsdam.de/is-the-lab-open/badge.svg)  
+[![Gitter Chat](https://badges.gitter.im/FH-Potsdam/is-the-lab-open.svg)](https://gitter.im/FH-Potsdam/is-the-lab-open)  
 
   
 ## what  

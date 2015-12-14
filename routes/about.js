@@ -3,7 +3,6 @@ texts = txt.get();
 
 exports.who = function(req, res) {
   res.render('about', {
-    env:req.app.get('dev'),
     title: 'Is the lab open?',
     val: 'who?',
     text: texts.who
@@ -12,7 +11,6 @@ exports.who = function(req, res) {
 
 exports.what = function(req, res) {
   res.render('about', {
-    env:req.app.get('dev'),
     title: 'Is the lab open?',
     val: 'what?',
     text: texts.what
@@ -21,7 +19,6 @@ exports.what = function(req, res) {
 
 exports.why = function(req, res) {
   res.render('about', {
-    env:req.app.get('dev'),
     title: 'Is the lab open?',
     val: 'why?',
     text: texts.why
@@ -30,7 +27,6 @@ exports.why = function(req, res) {
 
 exports.how = function(req, res) {
   res.render('about', {
-    env:req.app.get('dev'),
     title: 'Is the lab open?',
     val: 'how?',
     text: texts.how

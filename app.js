@@ -72,7 +72,7 @@ app.use(bodyParser.urlencoded({
 app.use(methodOverride());
 // we are not on the root level in production
 if (app.get('env') === 'development') {
-  app.use('/is-the-lab-open/', express.static(path.join(__dirname, '/public')));
+  app.use( express.static(path.join(__dirname, '/public')));
 } else if (app.get('env') === 'production') {
   app.use(express.static(path.join(__dirname, '/public')));
 }

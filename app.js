@@ -58,6 +58,8 @@ app.set('views', path.join(__dirname, 'views'));
 // get the environment into a setting
 if (app.get('env') === 'development') {
   app.set('dev', true);
+}else{
+  app.set('dev', false);
 }
 app.use(logger('dev'));
 app.use(bodyParser.json());

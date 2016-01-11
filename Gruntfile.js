@@ -55,6 +55,7 @@ module.exports = function(grunt) {
       'docs/authentication.md',
       'docs/ifttt.md',
       'docs/server.md',
+      'docs/run-it-forever.md',
       'docs/license.md'
       ],
       dest:'README.md'

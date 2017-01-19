@@ -32,7 +32,7 @@ passport.use(new Strategy(
       if (!user) {
         return cb(null, false);
       }
-      if (user.password != password) {
+      if (user.password !== password) {
         return cb(null, false);
       }
       return cb(null, user);
@@ -72,7 +72,7 @@ app.use(bodyParser.urlencoded({
 app.use(methodOverride());
 // we are not on the root level in production
 if (app.get('env') === 'development') {
-  app.use( express.static(path.join(__dirname, '/public')));
+  app.use(express.static(path.join(__dirname, '/public')));
 } else if (app.get('env') === 'production') {
   app.use(express.static(path.join(__dirname, '/public')));
 }

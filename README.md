@@ -30,10 +30,10 @@ Currently we have some simple authentication in place so nobody can call the api
 
 To make a call to the api you can now open the url like this:   
 
-This opens the lab: [https://maker:superlongultrasecretpassword@example.com/is-the-lab-open/api/1](https://maker:superlongultrasecretpassword@example.com/is-the-lab-open/api/1)  
+This opens the lab: [https://secretname:superlongultrasecretpassword@example.com/is-the-lab-open/api/1](https://secretname:superlongultrasecretpassword@example.com/is-the-lab-open/api/1)  
 
 
-This closes the lab: [https://maker:superlongultrasecretpassword@example.com/is-the-lab-open/api/0](https://maker:superlongultrasecretpassword@example.com/is-the-lab-open/api/0)  
+This closes the lab: [https://secretname:superlongultrasecretpassword@example.com/is-the-lab-open/api/0](https://secretname:superlongultrasecretpassword@example.com/is-the-lab-open/api/0)  
 
 \* Calls like these should only be made over https or you risk man in the middle attacks.  
 
@@ -100,6 +100,23 @@ Your app should be live.
 
 To see the badge got to [https://fancy-domain.io/is-the-lab-open/badge.svg](https://fancy-domain.io/is-the-lab-open/badge.svg)  
 
+## Use of Forever is Deprecated
+
+We moved on and are using [pm2](https://github.com/Unitech/PM2) now. 
+
+- installation as daemon
+- starting stopping
+- different user then root
+
+All this is way easier then using forever and forever-service.  
+Updated docs are coming soon(-ish).  
+
+## Usage of pm2
+
+tbd
+
+-----
+
 ## Forever 
 
 To have this project running all the time we need some tools.
@@ -156,6 +173,8 @@ Stop    - "sudo service isthelabopen stop"
 Status  - "sudo service isthelabopen status"
 Restart - "sudo service isthelabopen restart"
 ```
+
+------
 
 ### Some minor issues
 

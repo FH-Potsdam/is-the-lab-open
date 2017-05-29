@@ -1,5 +1,6 @@
 // express
 var express = require('express');
+var helmet = require('helmet');
 var logger = require('morgan');
 var bodyParser = require('body-parser');
 var methodOverride = require('method-override');
@@ -42,6 +43,7 @@ passport.use(new Strategy(
 var port = 61424;
 
 var app = express(); // create the app
+app.use(helmet());
 app.disable('strict routing');
 // compress with gzip
 app.use(compression());

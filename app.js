@@ -128,5 +128,5 @@ app.use(function(err, req, res, next) {
 
 var server = http.createServer(app);
 server.listen(app.get('port'), function() {
-  console.log('Express server listening on port ' + app.get('port'));
+  console.log('Express server listening on port http://localhost:' + app.get('port'));
 });

@@ -96,6 +96,7 @@ app.get('/who', about.who);
 app.get('/what', about.what);
 app.get('/why', about.why);
 app.get('/how', about.how);
+app.get('/version', about.version);
 app.get('/api/:value', passport.authenticate('basic', {
   session: false
 }), api.set);

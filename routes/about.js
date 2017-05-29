@@ -1,5 +1,5 @@
 var txt = require('../app/texts');
-texts = txt.get();
+var texts = txt.get();
 
 exports.who = function(req, res) {
   res.render('about', {
@@ -30,5 +30,13 @@ exports.how = function(req, res) {
     title: 'Is the lab open?',
     val: 'how?',
     text: texts.how
+  });
+};
+
+exports.version = function(req, res) {
+  res.render('about', {
+    title: 'Is the lab open?',
+    val: 'version?',
+    text: texts.version
   });
 };

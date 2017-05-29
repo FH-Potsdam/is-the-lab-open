@@ -10,6 +10,13 @@ exports.set = function(req, res) {
     ':' + now.getMinutes().toString() +
     ':' + now.getSeconds().toString();
   console.log(req.params);
-  cache.apiWrite(parseInt(req.params.value), tmstmp);
+  // this should not be like this
+  // it is not safe to parse user input
+  if(req.params.value === '1') {
+    cache.apiWrite(1, tmstmp);
+  }else if(req.params.value === '0') {
+    cache.apiWrite(0, tmstmp);
+  }
+  // cache.apiWrite(parseInt(req.params.value), tmstmp);
   res.send('Message received from ' + req.user.username + ': ' + req.params.value);
 };
